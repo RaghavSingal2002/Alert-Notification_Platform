@@ -1,23 +1,72 @@
-Alert & Notification Platform 📣
-Overview
-This project is a lightweight and extensible alerting and notification platform designed to provide timely and targeted communication within an organization. It's built to solve the common problem of missed or overwhelming notifications by giving both administrators and users control. The system is designed with a strong focus on clean Object-Oriented Programming (OOP) principles, ensuring it's modular, scalable, and easy to maintain.
+🚨 Alert & Notification Platform
+📌 Project Overview
 
-✨ Key Features
-Configurable Alerts: Admins can create alerts with a title, message, and severity level (Info 🟢, Warning 🟡, Critical 🔴).
+The Alert & Notification Platform is a real-time system designed to manage, distribute, and monitor alerts within an organization. It ensures that critical information such as system downtimes, policy updates, or urgent announcements, is delivered promptly to the right audience.
 
-Granular Visibility: Alerts can be precisely targeted to the entire organization 🏢, specific teams 👥, or individual users 👤.
+This project demonstrates scalable backend design using FastAPI, role-based access control (RBAC), and real-time notification delivery, making it highly suitable for enterprise-grade alerting systems.
 
-Smart Reminders: The system features a persistent reminder logic that re-sends alerts every two hours until a user explicitly snoozes it for the day or the alert expires.
+🎯 Features
 
-User Control: End users can receive relevant alerts, mark them as read/unread, and snooze them for the day.
+Admin Functionality
 
-Extensible Architecture: The core design is built to be easily extended to support future features, such as new delivery channels (e.g., Email 📧, SMS 📱) or custom reminder frequencies.
+Create, update, and delete alerts
 
-🧠 Technical Design and Principles
-The platform's architecture is built on a foundation of proven software design patterns to ensure robustness and extensibility.
+Define severity levels (Info, Warning, Critical)
 
-Observer Pattern: This pattern is used for user subscription management. An Alert acts as the Subject, and Users act as Observers. When an alert is updated or triggered, it notifies all its subscribed users without being tightly coupled to their specific implementation.
+Set visibility (Global, Department, Individual)
 
-Strategy Pattern: Notification delivery is handled using the Strategy Pattern. The system defines a DeliveryStrategy interface, and each delivery method (like InAppDelivery) implements this interface. This design allows for new delivery channels to be added seamlessly without altering the core alert management logic.
+Monitor delivery status
 
-OOP Principles: The codebase adheres to core OOP principles like Encapsulation, Abstraction, and the Single Responsibility Principle (SRP), resulting in clean, readable, and maintainable code.
+User Functionality
+
+Receive alerts based on role and department
+
+View history of past alerts
+
+Mark alerts as read/unread
+
+Filter alerts by severity or category
+
+System Features
+
+Role-based Access Control (RBAC)
+
+Priority handling for critical alerts
+
+REST API endpoints with auto-generated Swagger UI
+
+Modular, scalable architecture
+
+🏗️ Architecture
+
+Backend: FastAPI (Python)
+
+Database: SQLite (can be extended to PostgreSQL/MySQL)
+
+Authentication: Role-based access for Admin/User
+
+API Testing: Swagger UI, Postman
+
+Future Enhancements: WebSockets/Push notifications for real-time alerts
+
+🛠️ Technologies Used
+
+FastAPI – High-performance Python framework
+
+Uvicorn – ASGI server for running FastAPI apps
+
+SQLite – Lightweight database
+
+Python – Core programming language
+
+Swagger UI – Auto-generated API documentation
+
+⚡ Project Workflow
+
+Admin logs in → Creates alert with severity & visibility
+
+System stores alert → Routes it based on RBAC rules
+
+Users receive alerts → Can filter, mark as read/unread
+
+Admin monitors status → Ensures delivery & acknowledgment
