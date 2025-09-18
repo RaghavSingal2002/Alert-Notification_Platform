@@ -70,3 +70,67 @@ System stores alert → Routes it based on RBAC rules
 Users receive alerts → Can filter, mark as read/unread
 
 Admin monitors status → Ensures delivery & acknowledgment
+
+System stores alert → Routes it based on RBAC rules
+
+Users receive alerts → Can filter, mark as read/unread
+
+Admin monitors status → Ensures delivery & acknowledgment
+
+🚀 Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/your-username/alert-notification-platform.git
+cd alert-notification-platform
+
+
+Create a virtual environment & install dependencies:
+
+python -m venv venv
+source venv/bin/activate   # On Windows use venv\Scripts\activate
+pip install -r requirements.txt
+
+
+Run the server:
+
+uvicorn app: app --reload
+
+
+Open API docs at:
+
+http://127.0.0.1:8000/docs
+
+📊 Example API Calls
+
+Create Alert (Admin)
+
+POST /admin/alerts
+
+
+Request Body:
+
+{
+  "title": "Server Down",
+  "message": "Database connection lost",
+  "severity": "Critical",
+  "visibility": "Global"
+}
+
+Fetch Alerts (User)
+
+GET /user/{user_id}/alerts
+
+📌 Future Scope
+
+Real-time push notifications using WebSockets
+
+Integration with Slack/Email/SMS APIs
+
+Advanced analytics dashboard
+
+Multi-language support
+
+📜 License
+
+This project is licensed under the MIT License.
